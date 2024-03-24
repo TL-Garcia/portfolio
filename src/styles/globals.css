@@ -1,0 +1,5 @@
+html {
+    color: var(--c-neutral-1);
+    background-color: var(--c-primary-4);
+    font-family: 'Helvetica', sans-serif;
+}

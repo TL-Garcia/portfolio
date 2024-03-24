@@ -2,9 +2,9 @@
 const config = {
     trailingComma: 'es5',
     tabWidth: 4,
-    semi: false,
+    semi: true,
     singleQuote: true,
     plugins: ['prettier-plugin-astro'],
-}
+};
 
-export default config
+export default config;
