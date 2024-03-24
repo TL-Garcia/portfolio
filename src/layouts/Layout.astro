@@ -1,0 +1,43 @@
+---
+interface Props {
+    title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <nav><h1>Tomás Loroño Garcia</h1></nav>
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        --c-primary-4: #0061fc;
+        --c-primary-3: #657eff;
+
+        --c-secondary-2: #ffe53e;
+
+        --c-neutral-6: #222;
+        --c-neutral-4: #6f6f6f;
+        --c-neutral-3: #8b8b8b;
+        --c-neutral-2: #e2e2e2;
+        --c-neutral-1: #f6f6f6;
+    }
+    html {
+        color: var(--c-neutral-1);
+        background-color: var(--c-primary-4);
+        font-family: Helvetica sans-serif;
+    }
+</style>
