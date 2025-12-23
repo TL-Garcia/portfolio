@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "./globals.css";
+
+@media print {
+  body {
+    font-size: 11pt;
+    break-after: always;
+    background: blue;
+  }
+
+  a::after {
+    content: "";
+  }
+
+  .no-print {
+    display: none;
+  }
+}
