@@ -6,8 +6,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand: #ffc972;
+  --color-brand-alt: cornflowerblue;
+
+  --font-sans: "Liberation Sans";
+  --font-serif: "FreeSerif";
+  --font-heading: "Gloock";
+  --font-mono: "Liberation Sans Mono";
 }
 
 @media (prefers-color-scheme: dark) {

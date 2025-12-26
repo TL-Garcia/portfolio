@@ -9,7 +9,7 @@ export default function CV() {
   // TODO: Investigate using subgrid
   /* 23cm is the size of an A4 sheet */
   return (
-    <div className="max-w-[23cm] h-[29.7cm] m-auto py-4 px-2 relative">
+    <div className="max-w-[23cm] m-auto py-4 px-2 relative">
       <Header />
       <svg
         style={{ position: "absolute", top: "0", zIndex: "-1" }}
@@ -39,8 +39,6 @@ export default function CV() {
           <ExperienceSection experiences={content.experience} />
         </div>
       </main>
-
-      {/*<button className="download-btn">Download as PDF</button>*/}
     </div>
   );
 }

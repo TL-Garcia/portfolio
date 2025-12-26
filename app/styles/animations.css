@@ -1,0 +1,51 @@
+@theme {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  --fade-in-time: 500ms;
+
+  --animate-fade-in: fade-in 1s backwards;
+
+  --animate-slide-from-right:
+    slide-from-right 1s ease-in forwards, var(--animate-fade-in);
+
+  @keyframes slide-from-right {
+    from {
+      transform: translateX(25%);
+    }
+  }
+
+  --animate-slide-from-left:
+    slide-from-left 1s ease-in forwards, var(--animate-fade-in);
+
+  @keyframes slide-from-left {
+    from {
+      transform: translateX(-25%);
+    }
+  }
+
+  /* TODO: Choose better timing curves */
+  /* TODO: Bake animation & delay times into utility clases (with better naming)*/
+  --animate-slide-from-below:
+    slide-from-below 500ms 1000ms ease-in backwards,
+    var(--animate-fade-in) 1000ms;
+  --animate-slide-from-below-2:
+    slide-from-below 500ms 200ms ease-in backwards, var(--animate-fade-in) 200ms;
+
+  @keyframes slide-from-below {
+    from {
+      transform: translateY(20px);
+    }
+  }
+
+  --animate-blink-caret: blink-caret 750ms infinite;
+
+  @keyframes blink-caret {
+    to {
+      border-color: transparent;
+    }
+  }
+}
