@@ -17,10 +17,23 @@ type State = {
 const INITIAL_STATE: State = { char: 0, text: 0, direction: "forward" };
 
 // TODO: Clean this up
-// TODO: Make accessible
+
+function prefersReducedMotion(): boolean {
+  // TODO: Make this SSR friendly
+  return matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
 
 export const Typewritten = ({ texts, interval = 250, delay = 0 }: Props) => {
   const [state, setState] = React.useState(INITIAL_STATE);
+
+  if (prefersReducedMotion()) {
+    /*
+     * Only returns first text
+     * This may result on a loss of information.
+     * It is a compromise needed to make this component accessible.
+     */
+    return texts[0];
+  }
 
   React.useEffect(() => {
     let intervalId: Parameters<typeof clearInterval>[0];
@@ -63,8 +76,14 @@ export const Typewritten = ({ texts, interval = 250, delay = 0 }: Props) => {
   const currentText = texts[state.text];
 
   return (
-    <span className="border-r-4 border-r-foreground animate-blink-caret">
-      {currentText.slice(0, state.char)}
+    <span>
+      <span
+        className="border-r-4 border-r-foreground animate-blink-caret"
+        aria-hidden
+      >
+        {currentText.slice(0, state.char)}
+      </span>
+      <span className="sr-only">{...texts}</span>
     </span>
   );
 };

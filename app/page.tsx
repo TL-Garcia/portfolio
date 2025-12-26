@@ -16,17 +16,16 @@ const content = {
 };
 
 const Hero = ({ text }) => {
-  // TODO: Make motion accessible
   return (
     <div className="h-screen max-w-[1300px] m-auto grid grid-cols-2 place-content-center items-center">
-      <h1 className="text-8xl font-serif mb-14 text-nowrap z-10 animate-slide-from-below-2">
+      <h1 className="text-8xl font-serif mb-14 text-nowrap z-10 motion-safe:animate-slide-from-below-2">
         {text}
       </h1>
       <svg
         width={785}
         height={785}
         xmlns="http://www.w3.org/2000/svg"
-        className="overflow-visible animate-slide-from-left"
+        className="overflow-visible motion-safe:animate-slide-from-left"
       >
         <circle cx={785 / 2} cy={785 / 2} r={785 / 2} className="fill-brand" />
 
@@ -39,7 +38,7 @@ const Hero = ({ text }) => {
         />
       </svg>
 
-      <div className="animate-slide-from-below">
+      <div className="motion-safe:animate-slide-from-below">
         <CTA />
       </div>
     </div>
