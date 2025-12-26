@@ -23,8 +23,7 @@ export const Typewritten = ({ texts, interval = 250, delay = 0 }: Props) => {
   const [state, setState] = React.useState(INITIAL_STATE);
 
   React.useEffect(() => {
-    // TODO: Type properly
-    let intervalId: any;
+    let intervalId: Parameters<typeof clearInterval>[0];
 
     const timeoutId = setTimeout(() => {
       intervalId = setInterval(() => {
