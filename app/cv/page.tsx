@@ -6,29 +6,16 @@ import { content } from "./content";
 import { Divider } from "./components/shared/divider";
 
 export default function CV() {
-  // TODO: Investigate using subgrid
   /* 23cm is the size of an A4 sheet */
   return (
-    <div className="max-w-[23cm] m-auto py-4 px-2 relative">
+    <div className="max-w-[23cm] m-auto py-4 px-2 relative grid grid-cols-3 gap-x-8">
       <Header />
-      <svg
-        style={{ position: "absolute", top: "0", zIndex: "-1" }}
-        width={240}
-        height={240}
-      >
-        <rect
-          x={50}
-          y={10}
-          width={70}
-          height={70}
-          stroke-width="5"
-          fill="#FFC972"
-        ></rect>
-      </svg>
 
-      <Divider />
+      <div className="col-span-3">
+        <Divider />
+      </div>
 
-      <main className="grid grid-cols-3 gap-8 pt-8">
+      <main className="grid grid-cols-subgrid col-span-3 pt-8">
         <div className="flex flex-col gap-8">
           <Introduction introduction={content.introduction} />
 

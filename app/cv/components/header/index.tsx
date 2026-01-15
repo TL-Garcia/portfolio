@@ -1,18 +1,20 @@
 import { Heading } from "../shared/heading";
 import { Contact } from "./components/contact";
+import { SVGDecoration } from "./components/svg-decoration";
 
 export const Header = () => {
-  // TODO: Link gap values to <main> content
   return (
-    <header className="grid grid-cols-3 items-end gap-8">
+    <header className="grid grid-cols-subgrid col-span-3 items-end ">
       <Heading level="primary" as="h1">
-        Tomas <br /> Loroño Garcia
+        Tomas <br aria-hidden /> Loroño Garcia
       </Heading>
       <Heading level="tertiary" as="p">
-        Full Stack <br /> Web Developer
+        Full Stack <br aria-hidden /> Web Developer
       </Heading>
 
       <Contact />
+
+      <SVGDecoration />
     </header>
   );
 };
