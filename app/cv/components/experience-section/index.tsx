@@ -1,10 +1,40 @@
+import { Body } from "../shared/body";
 import { Divider } from "../shared/divider";
+import { Heading } from "../shared/heading";
 import { Section } from "../shared/section";
-import { ExperienceBulletpoints } from "./components/experience-bulletpoints";
 import { Experience } from "./types";
 
 type Props = {
   experiences: Experience[];
+};
+
+const ExperienceBulletpoints = ({
+  experience: { place, position, timeLapse, points },
+}: {
+  experience: Experience;
+}) => {
+  return (
+    <article className="grid grid-cols-2 gap-x-8" key={place + position}>
+      <Heading as="h3" level="tertiary">
+        {place}
+      </Heading>
+      <Heading level="quaternary" as="p">
+        {position}
+      </Heading>
+
+      <Body variant="secondary">{timeLapse}</Body>
+
+      <ul className="grid gap-y-2">
+        {points.map((point) => (
+          <li>
+            <Body as="span" variant="secondary">
+              {point}
+            </Body>
+          </li>
+        ))}
+      </ul>
+    </article>
+  );
 };
 
 const ExperienceList = ({ experiences }: Props) => {
@@ -15,7 +45,7 @@ const ExperienceList = ({ experiences }: Props) => {
     return (
       <>
         <ExperienceBulletpoints experience={e} key={e.timeLapse} />
-        {isLastElement && <Divider />}
+        {isLastElement && <Divider gap="L" />}
       </>
     );
   });
@@ -24,9 +54,7 @@ const ExperienceList = ({ experiences }: Props) => {
 export const ExperienceSection = ({ experiences }: Props) => {
   return (
     <Section title="Experience">
-      <div className="grid gap-4">
-        <ExperienceList experiences={experiences} />
-      </div>
+      <ExperienceList experiences={experiences} />
     </Section>
   );
 };

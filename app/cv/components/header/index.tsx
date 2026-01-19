@@ -4,7 +4,7 @@ import { SVGDecoration } from "./components/svg-decoration";
 
 export const Header = () => {
   return (
-    <header className="grid grid-cols-subgrid col-span-3 items-end ">
+    <header className="grid grid-cols-subgrid col-span-3 items-end relative">
       <Heading level="primary" as="h1">
         Tomas <br aria-hidden /> Loroño Garcia
       </Heading>

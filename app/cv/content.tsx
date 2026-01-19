@@ -18,6 +18,7 @@ const experience = [
       "Improved core pipelines (build/test/CI-CD) performance by up to 80%",
       "Designed scalable architectures for modern React projects in complex use-cases",
       "Refactored undocumented mission critical legacy code, improving developer experience and performance",
+      "Contributed to stablishing the guidelines and architecture of NextJS projects ",
     ],
   },
   {
@@ -60,6 +61,8 @@ const skills = [
   "React",
   "Redux",
   "NodeJS",
+  "NextJS",
+  "Astro",
   "Micro-Frontends",
   "DDD",
   "Hexagonal Architecture",

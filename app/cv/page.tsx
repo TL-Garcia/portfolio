@@ -8,14 +8,14 @@ import { Divider } from "./components/shared/divider";
 export default function CV() {
   /* 23cm is the size of an A4 sheet */
   return (
-    <div className="max-w-[23cm] m-auto py-4 px-2 relative grid grid-cols-3 gap-x-8">
+    <div className="max-w-[23cm] m-auto py-10 px-6 relative grid grid-cols-3 gap-x-8">
       <Header />
 
       <div className="col-span-3">
         <Divider />
       </div>
 
-      <main className="grid grid-cols-subgrid col-span-3 pt-8">
+      <main className="grid grid-cols-subgrid col-span-3 pt-4">
         <div className="flex flex-col gap-8">
           <Introduction introduction={content.introduction} />
 

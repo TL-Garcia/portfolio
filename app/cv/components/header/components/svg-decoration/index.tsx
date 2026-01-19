@@ -1,7 +1,7 @@
 export const SVGDecoration = () => {
   return (
     <svg
-      style={{ position: "absolute", top: "0", zIndex: "-1" }}
+      style={{ position: "absolute", top: "-1rem", zIndex: "-1" }}
       width={240}
       height={240}
     >
