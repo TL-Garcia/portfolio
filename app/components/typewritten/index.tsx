@@ -20,6 +20,7 @@ const INITIAL_STATE: State = { char: 0, text: 0, direction: "forward" };
 
 function prefersReducedMotion(): boolean {
   // TODO: Make this SSR friendly
+  return false;
   return matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 

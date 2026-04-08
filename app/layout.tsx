@@ -1,4 +1,4 @@
-import { Gloock } from "next/font/google";
+import { Anonymous_Pro, Gloock } from "next/font/google";
 import type { Metadata } from "next";
 import "./styles/index.css";
 
@@ -11,6 +11,12 @@ const gloock = Gloock({
   variable: "--font-gloock",
   subsets: ["latin"],
   weight: "400",
+});
+
+const anonymousPro = Anonymous_Pro({
+  variable: "--font-anonymous-pro",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export default function RootLayout({
@@ -29,7 +35,11 @@ export default function RootLayout({
         type="image/png"
         sizes="32x32"
       />
-      <body className={`antialiased ${gloock.variable}`}>{children}</body>
+      <body
+        className={`antialiased ${gloock.variable} ${anonymousPro.variable}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

@@ -54,7 +54,6 @@ const experience = [
       "Championed the creation of coding standards",
     ],
   },
-  ,
 ];
 
 const skills = [
